@@ -55,8 +55,11 @@ Reload systemd to recognize the new service:
 Enable the Flask app service to start on boot:
 ```sudo systemctl enable flaskapp.service```
 
-Start the service immediately:
-```sudo systemctl start flaskapp.service```
+Start and restart the service immediately:
+```
+sudo systemctl start flaskapp.service
+sudo systemctl restart flaskapp.service
+```
 
 Check the status to ensure it's running:
 ```sudo systemctl status flaskapp.service```

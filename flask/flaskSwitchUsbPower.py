@@ -9,14 +9,51 @@ html_template = """
 <html>
 <head>
     <title>USB Power Control</title>
+    <style>
+        button {
+            padding: 20px 40px; /* Increase padding for larger buttons */
+            font-size: 24px; /* Increase font size */
+            width: 300px; /* Set a fixed width */
+            height: 100px; /* Set a fixed height */
+            color: white; /* Set text color to white */
+            border: none; /* Remove borders */
+            border-radius: 10px; /* Add rounded corners */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        /* Styling for the ON button */
+        form[action="/powerOn"] button {
+            background-color: #4CAF50; /* Green background */
+        }
+
+        form[action="/powerOn"] button:hover {
+            background-color: #388E3C; /* Darker green for hover */
+        }
+
+        /* Styling for the OFF button */
+        form[action="/powerOff"] button {
+            background-color: #f44336; /* Red background */
+        }
+
+        form[action="/powerOff"] button:hover {
+            background-color: #D32F2F; /* Darker red for hover */
+        }
+
+        body {
+            text-align: center; /* Center the content */
+            font-family: Arial, sans-serif; /* Set a clean font */
+            margin-top: 50px; /* Add some margin at the top */
+        }
+    </style>
 </head>
 <body>
     <h1>USB Power Control</h1>
     <form action="/powerOn" method="post">
-        <button type="submit" style="padding: 10px 20px; font-size: 16px;">USB Power ON</button>
+        <button type="submit">USB Power ON</button>
     </form>
+    <br> <!-- Add spacing between buttons -->
     <form action="/powerOff" method="post">
-        <button type="submit" style="padding: 10px 20px; font-size: 16px;">USB Power OFF</button>
+        <button type="submit">USB Power OFF</button>
     </form>
 </body>
 </html>
