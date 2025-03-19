@@ -77,3 +77,16 @@ PIR VCC -> RPi 5V (Pin 2 or 4)
 PIR GND -> RPi GND (Pin 6)
 PIR OUT -> RPi GPIO17 (Pin 11)
 ```
+
+## Switch USB port (5V)
+
+On the Raspberry Pi 4 and 3B+, you can toggle the power to the USB ports via software. This is done by controlling the USB hub chip. 
+
+```
+# Turn off USB power
+echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/unbind
+
+# Turn USB power back on
+echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/bind
+```
+
