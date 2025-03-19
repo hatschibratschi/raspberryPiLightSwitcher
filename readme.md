@@ -20,6 +20,15 @@ echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/unbind
 echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/bind
 ```
 
+### Switch USB power off at start up
+
+Set crontab with reboot to switch power of at startup.
+
+```
+sudo crontab -e
+@reboot echo '1-1' > /sys/bus/usb/drivers/usb/unbind
+```
+
 ## pi-pinout
 `pinout`
 
