@@ -28,7 +28,7 @@ Replace www-data with your username if necessary.
 
 ## Start as a service
 
-`sudo nano /etc/systemd/system/flaskapp.service`
+`sudo vim /etc/systemd/system/flaskapp.service`
 
 ```
 [Unit]
@@ -42,6 +42,7 @@ Replace www-data with your username if necessary.
    Restart=always
    Environment="FLASK_APP=flaskSwitchUsbPower.py"
    Environment="FLASK_ENV=test"
+   StandardOutput=null
 
    [Install]
    WantedBy=multi-user.target
