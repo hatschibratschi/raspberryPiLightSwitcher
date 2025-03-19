@@ -1,5 +1,25 @@
 # Project
 
+## Task
+
+Use RaspberryPi 3 to switch USB 5V powered lights. 
+
+1. Use web page to switch USB power on and off.
+1. Use motion detection to switch USB power.
+1. Use motion detection and light sensor to switch USB power.
+
+## Switch USB port (5V)
+
+On the Raspberry Pi 4 and 3B+, you can toggle the power to the USB ports via software. This is done by controlling the USB hub chip. 
+
+```
+# Turn off USB power
+echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/unbind
+
+# Turn USB power back on
+echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/bind
+```
+
 ## pi-pinout
 `pinout`
 
@@ -77,16 +97,3 @@ PIR VCC -> RPi 5V (Pin 2 or 4)
 PIR GND -> RPi GND (Pin 6)
 PIR OUT -> RPi GPIO17 (Pin 11)
 ```
-
-## Switch USB port (5V)
-
-On the Raspberry Pi 4 and 3B+, you can toggle the power to the USB ports via software. This is done by controlling the USB hub chip. 
-
-```
-# Turn off USB power
-echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/unbind
-
-# Turn USB power back on
-echo '1-1' | sudo tee /sys/bus/usb/drivers/usb/bind
-```
-
